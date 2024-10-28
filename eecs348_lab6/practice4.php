@@ -1,22 +1,33 @@
 
 
-<html>
-<style>
-        h1{
-                color: blue
+<?php
+if ($_POST) {
+// Get the number from the form
+        $num = ($_POST['size']);
+
+        echo "<table border=1>";
+
+// Print the header row
+        echo "<tr><th> </th>";
+        for ($i = 1; $i <= $num; $i++) {
+                echo "<th>$i</th>";
         }
-</style>
+        echo "</tr>";
 
-<head>
-    <h1>Muiltiplication table</h1>
-</head>
+// Print the table rows
+        for ($i = 1; $i <= $num; $i++) {
+                echo "<tr>";
+                echo "<th>$i</th>";
 
-<body>
-    <form action="practice4.php" method="post">
-        Size of the multiplication table: <input type="text" name="size"><br>
-        <input type="submit">
-    </form>
-</body>
+                for ($j = 1; $j <= $num; $j++) {
+                        echo "<td>" . ($i * $j) . "</td>";
+                }
+                echo "</tr>";
+        }
 
-</html>
+        echo "</table>";
+}
+?>
+
+                                                                             
 
